@@ -16,6 +16,9 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
         Button recycleViewActivity = (Button) findViewById(R.id.btn_recycle_demo);
         recycleViewActivity.setOnClickListener(this);
+
+        Button notifDemoActivity = (Button) findViewById(R.id.btn_notif_demo);
+        notifDemoActivity.setOnClickListener(this);
     }
 
     @Override
@@ -44,6 +47,12 @@ public class MainActivity extends Activity implements View.OnClickListener{
         switch (v.getId()) {
             case R.id.btn_recycle_demo:
                 startActivity(new Intent(this, RecyclerDemoActivity.class));
+                break;
+            case R.id.btn_notif_demo:
+                startActivity(new Intent(this, NotifDemoActivity.class));
+                break;
+            case R.id.btn_service_demo:
+                startActivity(new Intent(this, ServiceDemoActivity.class));
                 break;
             default:
                 break;

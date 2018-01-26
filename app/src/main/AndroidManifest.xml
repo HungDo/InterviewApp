@@ -26,9 +26,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- Include the AdActivity configChanges and theme. -->
+        <activity android:name=".RecyclerDemoActivity"/>
+        <activity android:name=".NotifDemoActivity"/>
+        <activity android:name=".ServiceDemoActivity">
 
-        <activity android:name=".RecyclerDemoActivity">
         </activity>
+
+        <receiver android:name=".service.DemoBroadcastReceiver">
+        </receiver>
+
 
         <!--<activity-->
             <!--android:name="com.google.android.gms.ads.AdActivity"-->

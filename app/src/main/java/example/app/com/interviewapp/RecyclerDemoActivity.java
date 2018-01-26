@@ -35,9 +35,7 @@ public class RecyclerDemoActivity extends Activity {
         @Override
         public void run() {
             items += 1;
-
             adapter.notifyDataSetChanged();
-
             handler.postDelayed(incrementer, DELAY);
         }
     };

@@ -1,5 +1,6 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="4dp"
@@ -7,7 +8,6 @@
 
     <TextView
         android:id="@+id/tv_title"
-        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="4dp"
@@ -17,7 +17,6 @@
 
     <TextView
         android:id="@+id/tv_description"
-        android:layout_below="@+id/tv_title"
         android:textAlignment="center"
         android:textSize="16sp"
         android:paddingBottom="16dp"
@@ -27,7 +26,6 @@
 
     <Button
         android:id="@+id/btn_recycle_demo"
-        android:layout_below="@+id/tv_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
@@ -35,7 +33,6 @@
 
     <Button
         android:id="@+id/btn_notif_demo"
-        android:layout_below="@+id/btn_recycle_demo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
@@ -43,9 +40,15 @@
 
     <Button
         android:id="@+id/btn_service_demo"
-        android:layout_below="@+id/btn_notif_demo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:text="Service Demo" />
-</RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_network_req_demo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="Network Request Demo" />
+</LinearLayout>
