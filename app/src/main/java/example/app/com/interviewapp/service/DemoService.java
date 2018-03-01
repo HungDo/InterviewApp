@@ -3,8 +3,8 @@ package example.app.com.interviewapp.service;
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.os.Binder;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -14,6 +14,23 @@ import android.util.Log;
  */
 
 public class DemoService extends Service {
+    private final IBinder mBinder = new LocalBinder();
+
+    public class LocalBinder extends Binder {
+        public DemoService getService() {
+            // Return this instance of LocalService so clients can call public methods
+            return DemoService.this;
+        }
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        super.onStartCommand(intent, flags, startId);
+
+        Log.d(DemoService.class.toString(), "onStartCommand");
+
+        return START_NOT_STICKY;
+    }
 
     @Nullable
     @Override
@@ -23,7 +40,7 @@ public class DemoService extends Service {
         Intent msg = new Intent("bind");
         sendBroadcast(msg);
 
-        return null;
+        return mBinder;
     }
 
     @Override

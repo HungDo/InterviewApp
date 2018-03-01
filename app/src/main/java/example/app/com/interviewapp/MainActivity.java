@@ -3,6 +3,7 @@ package example.app.com.interviewapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +20,12 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
         Button notifDemoActivity = (Button) findViewById(R.id.btn_notif_demo);
         notifDemoActivity.setOnClickListener(this);
+
+        Button serviceDemoActivity = (Button) findViewById(R.id.btn_service_demo);
+        serviceDemoActivity.setOnClickListener(this);
+
+        Button fragmentDemoActivity = (Button) findViewById(R.id.btn_fragment_demo);
+        fragmentDemoActivity.setOnClickListener(this);
     }
 
     @Override
@@ -53,6 +60,10 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 break;
             case R.id.btn_service_demo:
                 startActivity(new Intent(this, ServiceDemoActivity.class));
+                break;
+            case R.id.btn_fragment_demo:
+                Log.e(MainActivity.class.toString(), "clicked");
+                startActivity(new Intent(this, FragmentDemoActivity.class));
                 break;
             default:
                 break;
